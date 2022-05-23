@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button } from "semantic-ui-react";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+
 export default function Update() {
   let navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
@@ -26,7 +28,7 @@ export default function Update() {
 
   return (
     <div>
-      <Form>
+      {/* <Form>
         <Form.Field>
           <label>First Name</label>
           <input
@@ -48,7 +50,37 @@ export default function Update() {
         <Button type="submit" onClick={sendDataToAPI}>
           Update
         </Button>
-      </Form>
+      </Form> */}
+      <TextField
+        name="fname"
+        onChange={(e) => setFirstName(e.target.value)}
+        placeholder="First Name"
+        value={firstName}
+      />
+      <br />
+      <br />
+      <TextField
+        name="lname"
+        placeholder="Last Name"
+        value={lastName}
+        onChange={(e) => setLastName(e.target.value)}
+      />
+      <br />
+      <br />
+      <Button
+        variant="outlined"
+        type="submit"
+        onClick={sendDataToAPI}
+        sx={{
+          color: "white",
+          backgroundColor: "rgba(0, 0, 0, 0.862)",
+          borderColor: "black",
+        }}
+      >
+        Update
+      </Button>
     </div>
   );
 }
+
+
