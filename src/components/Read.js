@@ -26,6 +26,7 @@ export default function Read() {
     localStorage.setItem("lastName", lastName);
   };
 
+
   const getData = () => {
     axios
       .get(`https://628248eeed9edf7bd881f42c.mockapi.io/api/mi/users`)
