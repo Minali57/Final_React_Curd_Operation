@@ -9,7 +9,6 @@ import TableRow from "@mui/material/TableRow";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
-
 export default function Read() {
   const [apiData, setApiData] = useState([]);
   useEffect(() => {
